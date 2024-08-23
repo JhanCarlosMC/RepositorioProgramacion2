@@ -1,0 +1,11 @@
+Problema
+En este diseño, la clase Portero implementa el método cobrarTiroDeEsquina pero lo hace lanzando una excepción,
+lo que viola el principio de Liskov. Al sustituir Jugador con Portero,
+el comportamiento esperado cambia drásticamente y puede causar errores en el programa.
+
+Ejemplo que cumple con el principio de Liskov
+Para cumplir con el principio de Liskov, podríamos dividir la interfaz Jugador en interfaces más específicas o
+usar una clase abstracta que defina un comportamiento común, y luego extenderla para cada tipo de jugador,
+asegurándonos de que solo los jugadores que pueden cobrar tiros de esquina implementen esa funcionalidad.
+
+Solución con Interfaces Específicas

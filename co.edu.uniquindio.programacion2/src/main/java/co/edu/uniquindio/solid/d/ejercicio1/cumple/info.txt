@@ -1,0 +1,16 @@
+Explicación:
+Uso de Interfaces (Abstracciones):
+En lugar de depender directamente de las clases concretas ImpresoraLaser y ImpresoraInyeccion,
+CentroImpresion depende de la interfaz Impresora. Esto significa que podemos introducir nuevas
+clases de impresoras sin necesidad de modificar CentroImpresion.
+
+Inyección de Dependencias: La impresora que se va a utilizar se inyecta a través del
+constructor de CentroImpresion. Esto hace que el CentroImpresion sea más flexible y fácil de probar.
+
+Facilidad de Escalabilidad: Si en el futuro necesitamos agregar una nueva impresora,
+solo necesitamos implementar la interfaz Impresora en una nueva clase sin tocar CentroImpresion.
+
+Beneficios de la Inversión de Dependencias:
+Bajo Acoplamiento: Las clases de alto nivel (CentroImpresion) no dependen de las clases de bajo nivel (ImpresoraLaser, ImpresoraInyeccion), sino de una abstracción (Impresora).
+Fácil de Extender: Podemos añadir nuevas implementaciones de impresoras sin modificar el código existente.
+Fácil de Probar: Puedes mockear la interfaz Impresora durante las pruebas unitarias, lo que hace que sea sencillo probar CentroImpresion sin necesitar impresoras reales.
