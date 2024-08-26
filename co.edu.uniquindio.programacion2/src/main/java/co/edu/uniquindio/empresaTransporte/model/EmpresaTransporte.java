@@ -7,12 +7,23 @@ public class EmpresaTransporte {
 
     private String nombre;
 
-    private List<VehiculoCarga> listaVehiculosCarga = new ArrayList<>();
-    private List<VehiculoPasajero> listaVehiculosPasajeros = new ArrayList<>();
-
-    private List<Propietario> listaPropietarios = new ArrayList<>();
+    private List<Propietario> listPropietarios = new ArrayList<>();
+    private List<VehiculoCarga> listVehiculosCarga = new ArrayList<>();
+    private List<VehiculoTransporte> listVehiculosPasajeros = new ArrayList<>();
+    private List<Usuario> listUsuarios = new ArrayList<>();
 
     public EmpresaTransporte() {
+    }
+
+    @Override
+    public String toString() {
+        return "EmpresaTransporte{ \n" +
+                "nombre='" + nombre + '\'' +
+                ", \nlistPropietarios = " + listPropietarios.toString() +
+                ", \nlistVehiculosCarga = " + listVehiculosCarga.toString() +
+                ", \nlistVehiculosPasajeros = " + listVehiculosPasajeros.toString() +
+                ", \nlistUsuarios = " + listUsuarios.toString() +
+                '}';
     }
 
     public String getNombre() {
@@ -23,27 +34,27 @@ public class EmpresaTransporte {
         this.nombre = nombre;
     }
 
-    public List<VehiculoCarga> getListaVehiculosCarga() {
-        return listaVehiculosCarga;
+    public List<VehiculoCarga> getListVehiculosCarga() {
+        return listVehiculosCarga;
     }
 
-    public void setListaVehiculosCarga(List<VehiculoCarga> listaVehiculosCarga) {
-        this.listaVehiculosCarga = listaVehiculosCarga;
+    public void setListVehiculosCarga(List<VehiculoCarga> listVehiculosCarga) {
+        this.listVehiculosCarga = listVehiculosCarga;
     }
 
-    public List<VehiculoPasajero> getListaVehiculosPasajeros() {
-        return listaVehiculosPasajeros;
+    public List<VehiculoTransporte> getListVehiculosPasajeros() {
+        return listVehiculosPasajeros;
     }
 
-    public void setListaVehiculosPasajeros(List<VehiculoPasajero> listaVehiculosPasajeros) {
-        this.listaVehiculosPasajeros = listaVehiculosPasajeros;
+    public void setListVehiculosPasajeros(List<VehiculoTransporte> listVehiculosPasajeros) {
+        this.listVehiculosPasajeros = listVehiculosPasajeros;
     }
 
     public List<Propietario> getListaAsociados() {
-        return listaPropietarios;
+        return listPropietarios;
     }
 
     public void setListaAsociados(List<Propietario> listaPropietarios) {
-        this.listaPropietarios = listaPropietarios;
+        this.listPropietarios = listaPropietarios;
     }
 }

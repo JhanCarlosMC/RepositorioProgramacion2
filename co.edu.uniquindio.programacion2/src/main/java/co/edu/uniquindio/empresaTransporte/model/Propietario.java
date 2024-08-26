@@ -5,22 +5,32 @@ import java.util.List;
 
 public class Propietario {
     private String nombre;
-    private String numeroIdentificacion;
+    private String cedula;
     private String email;
     private String numeroCelular;
-    private Vehiculo vehiculo;
 
-    private List<VehiculoCarga> listaVehiculosAsociados = new ArrayList<>();
+    private List<Vehiculo> listaVehiculosAsociados = new ArrayList<>();
+    private Vehiculo vehiculoAsociado;
 
     public Propietario() {
     }
 
-    public Propietario(String nombre, String numeroIdentificacion, String email, String numeroCelular, Vehiculo vehiculo) {
+    public Propietario(String nombre, String cedula, String email, String numeroCelular, Vehiculo vehiculoAsociado) {
         this.nombre = nombre;
-        this.numeroIdentificacion = numeroIdentificacion;
+        this.cedula = cedula;
         this.email = email;
         this.numeroCelular = numeroCelular;
-        this.vehiculo = vehiculo;
+        this.vehiculoAsociado = vehiculoAsociado;
+    }
+
+    @Override
+    public String toString() {
+        return "Propietario{" +
+                "nombre='" + nombre + '\'' +
+                ", cedula='" + cedula + '\'' +
+                ", email='" + email + '\'' +
+                ", numeroCelular='" + numeroCelular + '\'' +
+                '}';
     }
 
     public String getNombre() {
@@ -31,12 +41,12 @@ public class Propietario {
         this.nombre = nombre;
     }
 
-    public String getNumeroIdentificacion() {
-        return numeroIdentificacion;
+    public String getCedula() {
+        return cedula;
     }
 
-    public void setNumeroIdentificacion(String numeroIdentificacion) {
-        this.numeroIdentificacion = numeroIdentificacion;
+    public void setCedula(String cedula) {
+        this.cedula = cedula;
     }
 
     public String getEmail() {
@@ -55,19 +65,20 @@ public class Propietario {
         this.numeroCelular = numeroCelular;
     }
 
-    public Vehiculo getVehiculo() {
-        return vehiculo;
+    public Vehiculo getVehiculoAsociado() {
+        return vehiculoAsociado;
     }
 
-    public void setVehiculo(Vehiculo vehiculo) {
-        this.vehiculo = vehiculo;
+    public void setVehiculoAsociado(Vehiculo vehiculo) {
+        this.vehiculoAsociado = vehiculo;
     }
 
-    public List<VehiculoCarga> getListaVehiculosAsociados() {
+    public List<Vehiculo> getListaVehiculosAsociados() {
         return listaVehiculosAsociados;
     }
 
-    public void setListaVehiculosAsociados(List<VehiculoCarga> listaVehiculosAsociados) {
+    public void setListaVehiculosAsociados(List<Vehiculo> listaVehiculosAsociados) {
         this.listaVehiculosAsociados = listaVehiculosAsociados;
     }
+
 }
