@@ -27,4 +27,16 @@ public class VehiculoTransporte extends Vehiculo {
     public int getTotalPasajeros() {
         return this.listUsuariosAsociados.size();
     }
+
+    public List<Usuario> getListUsuariosAsociados() {
+        return listUsuariosAsociados;
+    }
+
+    public void setListUsuariosAsociados(List<Usuario> listUsuariosAsociados) {
+        this.listUsuariosAsociados = listUsuariosAsociados;
+    }
+
+    public void setUsuarioToList(Usuario usuario){
+        this.listUsuariosAsociados.add(usuario);
+    }
 }
