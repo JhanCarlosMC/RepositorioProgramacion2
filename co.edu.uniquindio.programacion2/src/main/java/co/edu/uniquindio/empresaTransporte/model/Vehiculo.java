@@ -5,6 +5,7 @@ public abstract class Vehiculo {
     private String modelo;
     private String marca;
     private String color;
+    private Propietario propietarioAsociado;
 
     public Vehiculo() {
     }
@@ -48,10 +49,12 @@ public abstract class Vehiculo {
         this.color = color;
     }
 
+    public Propietario getPropietarioAsociado() {
+        return propietarioAsociado;
+    }
 
-
-    public void encender(){
-        System.out.println("Encendiendo mi vehiculo");
+    public void setPropietarioAsociado(Propietario propietarioAsociado) {
+        this.propietarioAsociado = propietarioAsociado;
     }
 
     @Override
@@ -63,4 +66,6 @@ public abstract class Vehiculo {
                 ", color='" + color + '\'' +
                 '}';
     }
+
+
 }

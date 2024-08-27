@@ -23,4 +23,8 @@ public class VehiculoTransporte extends Vehiculo {
     public void setNumeroMaximoPasajeros(int numeroMaximoPasajeros) {
         this.numeroMaximoPasajeros = numeroMaximoPasajeros;
     }
+
+    public int getTotalPasajeros() {
+        return this.listUsuariosAsociados.size();
+    }
 }

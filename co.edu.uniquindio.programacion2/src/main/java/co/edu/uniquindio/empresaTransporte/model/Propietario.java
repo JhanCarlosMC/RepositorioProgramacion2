@@ -8,6 +8,7 @@ public class Propietario {
     private String cedula;
     private String email;
     private String numeroCelular;
+    private int edad;
 
     private List<Vehiculo> listaVehiculosAsociados = new ArrayList<>();
     private Vehiculo vehiculoAsociado;
@@ -81,4 +82,11 @@ public class Propietario {
         this.listaVehiculosAsociados = listaVehiculosAsociados;
     }
 
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
 }

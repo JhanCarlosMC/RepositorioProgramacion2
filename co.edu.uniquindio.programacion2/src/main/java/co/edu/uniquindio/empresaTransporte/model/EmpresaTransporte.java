@@ -57,4 +57,12 @@ public class EmpresaTransporte {
     public void setListaAsociados(List<Propietario> listaPropietarios) {
         this.listPropietarios = listaPropietarios;
     }
+
+    public void setPropietarioAsociado(Propietario propietario) {
+        this.listPropietarios.add(propietario);
+    }
+
+    public void setVehiculoCargaAsociado(VehiculoCarga vehiculoCarga) {
+        this.listVehiculosCarga.add(vehiculoCarga);
+    }
 }

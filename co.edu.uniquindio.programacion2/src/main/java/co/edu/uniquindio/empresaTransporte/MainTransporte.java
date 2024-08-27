@@ -17,8 +17,6 @@ public class MainTransporte {
     }
 
 
-
-
     private static EmpresaTransporte inicializarDatos() {
         EmpresaTransporte empresaTransporte = new EmpresaTransporte();
         empresaTransporte.setNombre("Transportes SA");
@@ -57,77 +55,140 @@ public class MainTransporte {
     }
 
 
-    private void menuPrincipal(EmpresaTransporte empresaTransporte){
+    private static void menuPrincipal(EmpresaTransporte empresaTransporte) {
 
-        do{
+        String option;
+        do {
 
-            String option = JOptionPane.showInputDialog("Bienvenido al Menu de gestion: \n\n " +
-                    "1. Crear propietario y su vehiculo de carga. \n\n" +
-                    "2. Calcular total de pasajeros transportados en un dia segun la placa\n\n" +
-                    "3. Calcular lista de usuarios mayores a un peso\n\n" +
-                    "4. Obtener numero de propietarios \n\n");
+            option = JOptionPane.showInputDialog("Bienvenido al Menu de gestion: \n\n"
+                    + "1. Crear propietario y su vehiculo de carga. \n"
+                    + "2. Calcular total de pasajeros transportados en un dia segun la placa.\n"
+                    + "3. Calcular lista de usuarios mayores a un peso.\n"
+                    + "4. Obtener numero de propietarios mayores de 40 años.\n"
+                    + "5. Encontrar usuarios en un rango de edad.\n\n"
+                    + "0. Salir");
 
-            switch (option){
+            switch (option) {
                 case "1":
+                    crearPropietarioVehiculoCarga(empresaTransporte);
                     break;
 
                 case "2":
+                    calcularTotalPasajeros(empresaTransporte);
                     break;
 
                 case "3":
+                    calcularUsuariosPorPeso(empresaTransporte);
                     break;
 
                 case "4":
+                    calcularPropietariosMayoresDe40(empresaTransporte);
+                    break;
+
+                case "5":
+                    encontrarUsuariosPorRangoDeEdad(empresaTransporte);
+                    break;
+
+                case "0":
                     break;
 
                 default:
-
+                    JOptionPane.showMessageDialog(null, "Opcion no valida.");
             }
 
-        }while (true);
+        } while (!option.equals("0"));
     }
 
-    private static void asociarVehiculo() {
-        VehiculoCarga vehiculoCarga = new VehiculoCarga();
-        vehiculoCarga.setPlaca("ABC123");
-        vehiculoCarga.setModelo("2020");
-        vehiculoCarga.setMarca("Volvo");
-        vehiculoCarga.setColor("Blanco");
-        vehiculoCarga.setCapacidadCarga(2000);
-        vehiculoCarga.setNumeroEjes(4);
 
+    private static EmpresaTransporte crearPropietarioVehiculoCarga(EmpresaTransporte empresaTransporte) {
+        Propietario newPropietario = new Propietario();
+        newPropietario.setCedula(JOptionPane.showInputDialog("Ingrese la cedula del propietario"));
+        newPropietario.setNombre(JOptionPane.showInputDialog("Ingrese el nombre del propietario"));
+        newPropietario.setEmail(JOptionPane.showInputDialog("Ingrese el email del propietario"));
+        newPropietario.setNumeroCelular(JOptionPane.showInputDialog("Ingrese el numero de celular del propietario"));
 
-        Propietario propietario = new Propietario();
-        propietario.setNombre("Carlos López");
-        propietario.setCedula("98765432");
-        propietario.setEmail("carlos@example.com");
-        propietario.setNumeroCelular("3109876543");
+        VehiculoCarga newVehiculoCarga = new VehiculoCarga();
+        newVehiculoCarga.setPlaca(JOptionPane.showInputDialog("Ingrese la placa del vehiculo"));
+        newVehiculoCarga.setColor(JOptionPane.showInputDialog("Ingrese el color del vehiculo"));
+        newVehiculoCarga.setMarca(JOptionPane.showInputDialog("Ingrese la marca del vehiculo"));
+        newVehiculoCarga.setModelo(JOptionPane.showInputDialog("Ingrese el modelo del vehiculo"));
+        newVehiculoCarga.setCapacidadCarga(Double.parseDouble(JOptionPane.showInputDialog("Ingrese la capacidad del vahiculo")));
 
-        propietario.setVehiculoAsociado(vehiculoCarga);
-        System.out.println("Asociado creado: " + propietario.getNombre() + " con vehículo de placa: " + vehiculoCarga.getPlaca());
+        newVehiculoCarga.setPropietarioAsociado(newPropietario);
+        newPropietario.setVehiculoAsociado(newVehiculoCarga);
+
+        empresaTransporte.setPropietarioAsociado(newPropietario);
+        empresaTransporte.setVehiculoCargaAsociado(newVehiculoCarga);
+
+        return empresaTransporte;
     }
 
-    private static void calcultarTotalPasajeros() {
-        VehiculoTransporte bus1 = new VehiculoTransporte();
-        bus1.setNumeroMaximoPasajeros(40);
+    private static void calcularTotalPasajeros(EmpresaTransporte empresaTransporte) {
+        String placa = JOptionPane.showInputDialog("Ingrese la placa del vehículo");
 
-        VehiculoTransporte bus2 = new VehiculoTransporte();
-        bus2.setNumeroMaximoPasajeros(30);
-
-        List<VehiculoTransporte> vehiculos = new ArrayList<>();
-        vehiculos.add(bus1);
-        vehiculos.add(bus2);
-        int[] viajesPorVehiculo = {5, 4};
-
-        int totalPasajeros = calcularTotalPasajeros(vehiculos, viajesPorVehiculo);
-        System.out.println("Total de pasajeros transportados en el día: " + totalPasajeros);
-    }
-
-    public static int calcularTotalPasajeros(List<VehiculoTransporte> vehiculos, int[] viajesPorVehiculo) {
-        int totalPasajeros = 0;
-        for (int i = 0; i < vehiculos.size(); i++) {
-            totalPasajeros += vehiculos.get(i).getNumeroMaximoPasajeros() * viajesPorVehiculo[i];
+        for (VehiculoTransporte vehiculo : empresaTransporte.getListVehiculosPasajeros()) {
+            if (vehiculo.getPlaca().equals(placa)) {
+                int totalPasajeros = vehiculo.getTotalPasajeros();
+                JOptionPane.showMessageDialog(null, "Total de pasajeros transportados: " + totalPasajeros);
+                return;
+            }
         }
-        return totalPasajeros;
+        JOptionPane.showMessageDialog(null, "Vehículo no encontrado.");
     }
+
+    private static void calcularUsuariosPorPeso(EmpresaTransporte empresaTransporte) {
+        double peso = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peso mínimo"));
+
+        List<VehiculoCarga> vehiculosFiltrados = new ArrayList<>();
+        for (VehiculoCarga vehiculo : empresaTransporte.getListVehiculosCarga()) {
+            if (vehiculo.getCapacidadCarga() > peso) {
+                vehiculosFiltrados.add(vehiculo);
+            }
+        }
+
+        if (vehiculosFiltrados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No hay vehículos con capacidad de carga superior a " + peso + "kg.");
+        } else {
+            StringBuilder resultado = new StringBuilder("Vehículos con capacidad de carga superior a " + peso + "kg:\n");
+            for (VehiculoCarga vehiculo : vehiculosFiltrados) {
+                resultado.append("Placa: ").append(vehiculo.getPlaca()).append(", Capacidad: ").append(vehiculo.getCapacidadCarga()).append("kg\n");
+            }
+            JOptionPane.showMessageDialog(null, resultado.toString());
+        }
+    }
+
+    private static void calcularPropietariosMayoresDe40(EmpresaTransporte empresaTransporte) {
+        int contador = 0;
+
+        for (Propietario propietario : empresaTransporte.getListaAsociados()) {
+            if (propietario.getEdad() > 40) {
+                contador++;
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, "Número de propietarios mayores de 40 años: " + contador);
+    }
+
+    private static void encontrarUsuariosPorRangoDeEdad(EmpresaTransporte empresaTransporte) {
+        int edadMinima = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad mínima"));
+        int edadMaxima = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la edad máxima"));
+
+        List<Propietario> propietariosFiltrados = new ArrayList<>();
+        for (Propietario propietario : empresaTransporte.getListaAsociados()) {
+            if (propietario.getEdad() >= edadMinima && propietario.getEdad() <= edadMaxima) {
+                propietariosFiltrados.add(propietario);
+            }
+        }
+
+        if (propietariosFiltrados.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "No hay propietarios en el rango de edad especificado.");
+        } else {
+            StringBuilder resultado = new StringBuilder("Propietarios en el rango de edad " + edadMinima + " - " + edadMaxima + ":\n");
+            for (Propietario propietario : propietariosFiltrados) {
+                resultado.append("Nombre: ").append(propietario.getNombre()).append(", Edad: ").append(propietario.getEdad()).append("\n");
+            }
+            JOptionPane.showMessageDialog(null, resultado.toString());
+        }
+    }
+
 }
