@@ -1,9 +1,9 @@
 package co.edu.uniquindio.patronesCreacionales.builder.ejemploClienteHerencia.model;
 
 public class Cliente {
-    protected String nombre;
-    protected String email;
-    protected String telefono;
+    private String nombre;
+    private String email;
+    private String telefono;
 
     public Cliente(String nombre, String email, String telefono) {
         this.nombre = nombre;
