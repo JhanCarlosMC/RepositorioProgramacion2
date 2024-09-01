@@ -88,6 +88,7 @@ public class MainTransporte {
         } while (!option.equals("0"));
     }
 
+    //-------------------------- REESTRUCTURAR ------------------------------------
     /**
      * Crea un nuevo propietario y un nuevo vehículo de carga, y los agrega a la empresa de transporte.
      *

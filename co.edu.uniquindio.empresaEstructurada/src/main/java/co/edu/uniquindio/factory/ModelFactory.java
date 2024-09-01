@@ -17,7 +17,9 @@ public class ModelFactory {
         return instance;
     }
 
-
+    public String calcularTotalPasajeros(String placa) {
+        return empresaTransporte.calcularTotalPasajeros(placa);
+    }
 
     /**
      * Inicializa los datos de la empresa de transporte, incluyendo propietarios, vehículos y usuarios.
@@ -188,7 +190,4 @@ public class ModelFactory {
         empresaTransporte.setUsuarioToList(usuario5);
     }
 
-    public String calcularTotalPasajeros(String placa) {
-        return empresaTransporte.calcularTotalPasajeros(placa);
-    }
 }
