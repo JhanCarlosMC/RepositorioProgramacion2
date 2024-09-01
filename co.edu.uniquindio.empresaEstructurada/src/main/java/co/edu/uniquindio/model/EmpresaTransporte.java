@@ -15,6 +15,26 @@ public class EmpresaTransporte {
     public EmpresaTransporte() {
     }
 
+
+    /**
+     * Calcula y muestra el total de pasajeros transportados por un vehículo de transporte en un día,
+     * según la placa ingresada.
+     *
+     * @return
+     */
+    public String calcularTotalPasajeros(String placa) {
+
+        for (VehiculoTransporte vehiculo : getListVehiculosTransporte()) {
+            if (vehiculo.getPlaca().equals(placa)) {
+                int totalPasajeros = vehiculo.getTotalPasajeros();
+                return "Total de pasajeros transportados: " + totalPasajeros;
+
+            }
+        }
+        return "";
+    }
+
+
     @Override
     public String toString() {
         return "EmpresaTransporte{ \n" +
@@ -42,7 +62,7 @@ public class EmpresaTransporte {
         this.listVehiculosCarga = listVehiculosCarga;
     }
 
-    public static List<VehiculoTransporte> getListVehiculosTransporte() {
+    public List<VehiculoTransporte> getListVehiculosTransporte() {
         return listVehiculosTransporte;
     }
 
@@ -86,22 +106,4 @@ public class EmpresaTransporte {
         return listPropietarios;
     }
 
-
-    /**
-     * Calcula y muestra el total de pasajeros transportados por un vehículo de transporte en un día,
-     * según la placa ingresada.
-     *
-     * @return
-     */
-    public String calcularTotalPasajeros(String placa) {
-
-        for (VehiculoTransporte vehiculo : getListVehiculosTransporte()) {
-            if (vehiculo.getPlaca().equals(placa)) {
-                int totalPasajeros = vehiculo.getTotalPasajeros();
-                return "Total de pasajeros transportados: " + totalPasajeros;
-
-            }
-        }
-        return "";
-    }
 }

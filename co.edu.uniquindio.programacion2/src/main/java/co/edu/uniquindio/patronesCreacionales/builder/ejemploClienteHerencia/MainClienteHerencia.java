@@ -13,7 +13,6 @@ public class MainClienteHerencia {
         Cliente clienteBasico = new ClienteBuilder()
                 .nombre("Juan Perez")
                 .email("juan@example.com")
-                .telefono("123456789")
                 .build();
 
         ClientePremium clientePremium = new ClientePremiumBuilder()
