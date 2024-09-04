@@ -1,8 +1,11 @@
 package co.edu.uniquindio.factory;
 
 import co.edu.uniquindio.model.*;
+import co.edu.uniquindio.services.ICrudUsuario;
 
-public class ModelFactory {
+import java.util.ArrayList;
+
+public class ModelFactory implements ICrudUsuario {
     private static ModelFactory instance;
     private static EmpresaTransporte empresaTransporte;
 
@@ -15,6 +18,31 @@ public class ModelFactory {
             instance = new ModelFactory();
         }
         return instance;
+    }
+
+    @Override
+    public boolean crearUsuario(String nombre, int edad){
+        return empresaTransporte.crearUsuario(nombre, edad);
+    }
+
+    @Override
+    public boolean eliminarUsuario(String nombre) {
+        return empresaTransporte.eliminarUsuario(nombre);
+    }
+
+    @Override
+    public boolean modificarUsuario(String nombre, int edad) {
+        return false;
+    }
+
+    @Override
+    public Usuario getUsuario(String nombre) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Usuario> getUsuarios() {
+        return null;
     }
 
     public String calcularTotalPasajeros(String placa) {

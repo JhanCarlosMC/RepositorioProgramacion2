@@ -16,27 +16,40 @@ public class MainTransporte {
      */
     public static void main(String[] args) {
         ModelFactory modelFactory = ModelFactory.getInstance();
-        calcularTotalPasajeros(modelFactory);
-
+        //calcularTotalPasajeros(modelFactory);
+        crudUsuario(modelFactory);
 //    System.out.println(empresaTransporte.toString());
 
     }
 
+    public static void crudUsuario(ModelFactory modelFactory) {
+        crearUsuario(modelFactory);
+        eliminarUsuario(modelFactory);
+    }
+
+    private static void eliminarUsuario(ModelFactory modelFactory) {
+        boolean eliminado = modelFactory.eliminarUsuario("Jhan Carlos");
+
+        System.out.println("El proceso de eliminacion ha finalizado con un estado de: " + eliminado);
+
+    }
+
+    public static void crearUsuario(ModelFactory modelFactory) {
+        boolean response = modelFactory.crearUsuario("Jhan Carlos", 23);
+
+        System.out.println("El proceso ha finalizado con un estado de: " + response);
+    }
 
     /**
      * Calcula y muestra el total de pasajeros transportados por un vehículo de transporte en un día,
      * según la placa ingresada.
-     *
      */
     private static void calcularTotalPasajeros(ModelFactory modelFactory) {
-        String placa = JOptionPane.showInputDialog("Ingrese la placa del vehículo");
+//        String placa = JOptionPane.showInputDialog("Ingrese la placa del vehículo");
+        String placa = "qwe232";
 
         String mensaje = modelFactory.calcularTotalPasajeros(placa);
     }
-
-
-
-
 
 
     /**
@@ -89,6 +102,7 @@ public class MainTransporte {
     }
 
     //-------------------------- REESTRUCTURAR ------------------------------------
+
     /**
      * Crea un nuevo propietario y un nuevo vehículo de carga, y los agrega a la empresa de transporte.
      *
@@ -125,7 +139,8 @@ public class MainTransporte {
      * @param empresaTransporte La instancia de EmpresaTransporte que contiene los vehículos de carga a consultar.
      */
     private static void calcularUsuariosPorPeso(EmpresaTransporte empresaTransporte) {
-        double peso = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peso mínimo"));
+//        double peso = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el peso mínimo"));
+        double peso = 40;
 
         List<VehiculoCarga> vehiculosFiltrados = new ArrayList<>();
         for (VehiculoCarga vehiculo : empresaTransporte.getListVehiculosCarga()) {

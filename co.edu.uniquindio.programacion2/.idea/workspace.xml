@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ff927f2-ed70-46ee-a868-9d43e371dfeb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e7bf6e92-0166-4140-b946-1b4374db1281" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -24,35 +22,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 8
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
 }</component>
-  <component name="ProjectId" id="2lNcUVD0ti95A9zNl6AxJeY6IC9" />
+  <component name="ProjectId" id="2labiwqkCpkmlCbV1lCTMrE2zbk" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MainFiguras.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "dev-empresa-estructurada",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Workspaces/ReporitorioProgramacion2",
+    "last_opened_file_path": "D:/Workspaces/ReporitorioProgramacion2/co.edu.uniquindio.programacion2",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "D:/Workspaces/ReporitorioProgramacion2/co.edu.uniquindio.empresaEstructurada/src/main/java/co/edu/uniquindio/Main.java",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "settings.editor.selected.configurable": "preferences.editor.code.editing",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Workspaces\ReporitorioProgramacion2\co.edu.uniquindio.empresaEstructurada\src\main\java\co\edu\uniquindio\model" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Workspaces\ReporitorioProgramacion2\co.edu.uniquindio.programacion2\src\main\java\co\edu\uniquindio\patronesCreacionales\factory\ejemploConexiones\model" />
+      <recent name="D:\Workspaces\ReporitorioProgramacion2\co.edu.uniquindio.programacion2\src\main\java\co\edu\uniquindio\patronesCreacionales\factory\ejemploConexiones\services" />
+      <recent name="D:\Workspaces\ReporitorioProgramacion2\co.edu.uniquindio.programacion2\src\main\java\co\edu\uniquindio\patronesCreacionales\factory\ejemploConexiones" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="co.edu.uniquindio" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="co.edu.uniquindio.patronesCreacionales.prototype.ejemploFiguras" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -66,15 +69,13 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6ff927f2-ed70-46ee-a868-9d43e371dfeb" name="Changes" comment="" />
-      <created>1725023994923</created>
+      <changelist id="e7bf6e92-0166-4140-b946-1b4374db1281" name="Changes" comment="" />
+      <created>1725421264151</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1725023994923</updated>
-      <workItem from="1725023996069" duration="2449000" />
-      <workItem from="1725202973366" duration="527000" />
-      <workItem from="1725459652166" duration="32000" />
-      <workItem from="1725459692989" duration="35000" />
+      <updated>1725421264151</updated>
+      <workItem from="1725421265188" duration="4100000" />
+      <workItem from="1725458389895" duration="928000" />
     </task>
     <servers />
   </component>

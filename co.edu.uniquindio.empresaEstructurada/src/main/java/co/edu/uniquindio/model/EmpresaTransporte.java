@@ -1,9 +1,11 @@
 package co.edu.uniquindio.model;
 
+import co.edu.uniquindio.services.ICrudUsuario;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmpresaTransporte {
+public class EmpresaTransporte implements ICrudUsuario {
 
     private String nombre;
 
@@ -15,6 +17,57 @@ public class EmpresaTransporte {
     public EmpresaTransporte() {
     }
 
+    @Override
+    public boolean crearUsuario(String nombre, int edad) {
+        Usuario newUsuario = new Usuario();
+
+        Usuario usuarioExistente = verificarUsuario(nombre);
+
+        if(usuarioExistente == null){
+            newUsuario.setNombre(nombre);
+            newUsuario.setEdad(edad);
+            listUsuarios.add(newUsuario);
+
+            return true;
+        }
+
+        return false;
+    }
+
+    @Override
+    public boolean eliminarUsuario(String nombre) {
+
+        return false;
+    }
+
+    @Override
+    public boolean modificarUsuario(String nombre, int edad) {
+        return false;
+    }
+
+    @Override
+    public Usuario getUsuario(String nombre) {
+        return null;
+    }
+
+    @Override
+    public ArrayList<Usuario> getUsuarios() {
+        return null;
+    }
+
+
+    private Usuario verificarUsuario(String nombre) {
+        Usuario usuarioExistente = null;
+
+        for (Usuario usuario : listUsuarios) {
+            if (usuario.getNombre().equals(nombre)) {
+                usuarioExistente = usuario;
+                break;
+            }
+        }
+
+        return usuarioExistente;
+    }
 
     /**
      * Calcula y muestra el total de pasajeros transportados por un vehículo de transporte en un día,
@@ -105,5 +158,6 @@ public class EmpresaTransporte {
     public List<Propietario> getListPropietarios() {
         return listPropietarios;
     }
+
 
 }
