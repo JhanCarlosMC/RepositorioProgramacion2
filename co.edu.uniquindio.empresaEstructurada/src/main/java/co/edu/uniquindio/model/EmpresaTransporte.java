@@ -34,26 +34,35 @@ public class EmpresaTransporte implements ICrudUsuario {
         return false;
     }
 
-    @Override
-    public boolean eliminarUsuario(String nombre) {
-
-        return false;
+@Override
+public boolean eliminarUsuario(String nombre) {
+    Usuario usuario = verificarUsuario(nombre);
+    if (usuario != null) {
+        listUsuarios.remove(usuario);
+        return true;
     }
+    return false;
+}
 
-    @Override
-    public boolean modificarUsuario(String nombre, int edad) {
-        return false;
+@Override
+public boolean modificarUsuario(String nombre, int edad) {
+    Usuario usuario = verificarUsuario(nombre);
+    if (usuario != null) {
+        usuario.setEdad(edad);
+        return true;
     }
+    return false;
+}
 
-    @Override
-    public Usuario getUsuario(String nombre) {
-        return null;
-    }
+@Override
+public Usuario getUsuario(String nombre) {
+    return verificarUsuario(nombre);
+}
 
-    @Override
-    public ArrayList<Usuario> getUsuarios() {
-        return null;
-    }
+@Override
+public ArrayList<Usuario> getUsuarios() {
+    return listUsuarios;
+}
 
 
     private Usuario verificarUsuario(String nombre) {
