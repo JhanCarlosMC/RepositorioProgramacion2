@@ -1,5 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploClavoTuerca;
 
+// Clase con la que queremos que trabaje Clavo
 public class Tuerca {
     private double radius;
 

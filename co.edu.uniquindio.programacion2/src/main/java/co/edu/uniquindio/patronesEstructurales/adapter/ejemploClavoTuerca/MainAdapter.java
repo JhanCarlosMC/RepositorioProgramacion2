@@ -1,7 +1,7 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploClavoTuerca;
 
 public class MainAdapter {
-
+    // Uso del adaptador
     public static void main(String[] args) {
         Tuerca tuerca = new Tuerca(5);
         Clavo clavo = new Clavo(5);

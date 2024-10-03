@@ -1,5 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploClavoTuerca;
 
+// Clase existente con interfaz incompatible
 public class Clavo {
     private double width;
 

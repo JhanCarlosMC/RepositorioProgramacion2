@@ -1,5 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploClavoTuerca;
 
+// Adaptador para que Clavo funcione con Tuerca
 public class ClavoAdapter extends Tornillo{
 private Clavo clavo;
 
