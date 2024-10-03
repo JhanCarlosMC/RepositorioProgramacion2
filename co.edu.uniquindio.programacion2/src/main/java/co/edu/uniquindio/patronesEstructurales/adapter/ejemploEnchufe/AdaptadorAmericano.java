@@ -1,6 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploEnchufe;
 
-public class AdaptadorAmericano implements EnchufeAmericano{
+public class AdaptadorAmericano implements IEnchufeAmericano {
     private EnchufeEuropeo enchufeEuropeo;
 
     public AdaptadorAmericano(EnchufeEuropeo enchufeEuropeo) {

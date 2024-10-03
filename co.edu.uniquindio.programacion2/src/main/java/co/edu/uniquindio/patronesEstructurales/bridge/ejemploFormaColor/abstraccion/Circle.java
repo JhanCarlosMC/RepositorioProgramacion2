@@ -1,10 +1,10 @@
 package co.edu.uniquindio.patronesEstructurales.bridge.ejemploFormaColor.abstraccion;
 
-import co.edu.uniquindio.patronesEstructurales.bridge.ejemploFormaColor.implementacion.Color;
+import co.edu.uniquindio.patronesEstructurales.bridge.ejemploFormaColor.implementacion.IColor;
 
 // Implementación de la abstracción con el puente
 public class Circle extends Shape {
-    public Circle(Color color) {
+    public Circle(IColor color) {
         super(color);
     }
 

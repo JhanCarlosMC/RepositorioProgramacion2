@@ -1,7 +1,8 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploClavoTuerca;
 
 public class MainAdapter {
-    // Uso del adaptador
+
+    // Uso del adaptador - Adapta interfaces incompatibles para que puedan trabajar juntas.
     public static void main(String[] args) {
         Tuerca tuerca = new Tuerca(5);
         Clavo clavo = new Clavo(5);

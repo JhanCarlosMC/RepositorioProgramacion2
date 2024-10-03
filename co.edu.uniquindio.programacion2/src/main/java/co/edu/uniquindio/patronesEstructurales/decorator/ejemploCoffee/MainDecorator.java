@@ -1,6 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.decorator.ejemploCoffee;
 
-// Uso del patrón Decorator
+// Uso del patrón Decorator - Añade dinámicamente funcionalidades a un objeto sin modificar su estructura original.
 public class MainDecorator {
 
 //    Los decoradores como MilkDecorator y SugarDecorator añaden

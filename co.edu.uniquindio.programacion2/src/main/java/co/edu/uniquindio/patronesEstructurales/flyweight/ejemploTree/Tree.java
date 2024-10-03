@@ -2,17 +2,17 @@ package co.edu.uniquindio.patronesEstructurales.flyweight.ejemploTree;
 
 // Contexto: Información no compartida
 class Tree {
-    private int x;
-    private int y;
+    private int weight;
+    private int height;
     private TreeType type;
 
-    public Tree(int x, int y, TreeType type) {
-        this.x = x;
-        this.y = y;
+    public Tree(int weight, int height, TreeType type) {
+        this.weight = weight;
+        this.height = height;
         this.type = type;
     }
 
     public void draw() {
-        type.draw(x, y);
+        type.draw(weight, height);
     }
 }

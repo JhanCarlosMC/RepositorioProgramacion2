@@ -1,5 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.flyweight.ejemploTree;
-// Uso del patrón Flyweight
+
+// Uso del patrón Flyweight - Optimiza el uso de memoria compartiendo instancias de objetos similares.
 public class MainFlyweight {
 
 //    TreeType es el flyweight que se comparte entre

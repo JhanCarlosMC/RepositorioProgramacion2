@@ -1,5 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.proxy.ejemploImagen;
-// Uso del patrón Proxy
+
+// Uso del patrón Proxy - Actúa como intermediario para controlar el acceso a otro objeto.
 public class MainProxy {
 
     //ProxyImage actúa como intermediario y

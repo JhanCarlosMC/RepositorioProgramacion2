@@ -1,6 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.facade.ejemploScreenSound;
 
-// Uso del patrón Facade
+// Uso del patrón Facade - Proporciona una interfaz simplificada a un sistema complejo.
 public class MainFacade {
 
 //    HomeTheaterFacade simplifica la interacción con el complejo sistema

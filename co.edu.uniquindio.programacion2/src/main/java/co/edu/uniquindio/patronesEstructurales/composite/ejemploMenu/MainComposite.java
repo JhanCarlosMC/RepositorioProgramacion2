@@ -1,6 +1,6 @@
 package co.edu.uniquindio.patronesEstructurales.composite.ejemploMenu;
 
-// Uso del patrón Composite
+// Uso del patrón Composite - Permite tratar objetos individuales y compuestos de la misma manera.
 public class MainComposite {
 
 //    El Menu puede contener tanto MenuItem (objetos hoja)

@@ -1,5 +1,5 @@
 package co.edu.uniquindio.patronesEstructurales.adapter.ejemploEnchufe;
 
-public interface EnchufeAmericano {
+public interface IEnchufeAmericano {
     void conectar();
 }
