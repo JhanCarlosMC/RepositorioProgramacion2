@@ -16,20 +16,12 @@ public class EmpresaPrestamo implements ICrudCliente {
 
 
     @Override
-    public boolean crearCliente(String cedula, String nombre, String apellido, String email, String telefonoCelular, String direccion) {
-        Cliente clienteEncontrado = verificarCliente(cedula);
+//    public boolean crearCliente(String cedula, String nombre, String apellido, String email, String telefonoCelular, String direccion) {
+    public boolean crearCliente(Cliente newCliente) {
+        //        Cliente clienteEncontrado = verificarCliente(cedula);
 
-        if (clienteEncontrado == null) {
-            Cliente cliente = Cliente.builder()
-                    .nombre(nombre)
-                    .cedula(cedula)
-                    .apellido(apellido)
-                    .email(email)
-                    .telefonoCelular(telefonoCelular)
-                    .direccion(direccion)
-                    .build();
-
-            getListClientes().add(cliente);
+        if (newCliente != null) {
+            getListClientes().add(newCliente);
 
             return true;
         }

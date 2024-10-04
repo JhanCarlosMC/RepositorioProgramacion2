@@ -41,14 +41,10 @@ public class ModelFactory implements IModelFactoryService {
     @Override
     public boolean agregarCliente(ClienteDto clienteDto) {
         if (empresaPrestamo.verificarClienteExistente(clienteDto.cedula())){
+
             Cliente newCliente = mapper.clienteDtoToCliente(clienteDto);
-            getEmpresaPrestamo().crearCliente(
-                    newCliente.getCedula(),
-                    newCliente.getNombre(),
-                    newCliente.getApellido(),
-                    newCliente.getEmail(),
-                    newCliente.getTelefonoCelular(),
-                    newCliente.getDireccion());
+
+            getEmpresaPrestamo().crearCliente(newCliente);
             return true;
 
         }
