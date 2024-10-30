@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="526.0" prefWidth="454.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.projectsupermercado.viewcontroller.ProductoViewController">
+   <children>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="526.0" prefWidth="455.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="-1.0" prefHeight="39.0" prefWidth="455.0" text="CRUD Producto">
+                     <font>
+                        <Font name="System Bold" size="27.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="41.0" layoutY="58.0" prefHeight="20.0" prefWidth="56.0" text="id:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="30.0" layoutY="90.0" prefHeight="18.0" prefWidth="66.0" text="Nombre:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="41.0" layoutY="122.0" prefHeight="20.0" prefWidth="56.0" text="Precio:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="39.0" layoutY="154.0" text="Cantidad:">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtId" layoutX="108.0" layoutY="55.0" prefHeight="26.0" prefWidth="268.0" />
+                  <TextField fx:id="txtNombre" layoutX="108.0" layoutY="87.0" prefHeight="26.0" prefWidth="268.0" />
+                  <TextField fx:id="txtPrecio" layoutX="108.0" layoutY="118.0" prefHeight="26.0" prefWidth="268.0" />
+                  <TextField fx:id="txtCantDisponible" layoutX="108.0" layoutY="151.0" prefHeight="26.0" prefWidth="268.0" />
+                  <Button fx:id="btnActualizar" layoutX="227.0" layoutY="204.0" mnemonicParsing="false" onAction="#onActualizarProducto" text="Actualizar" />
+                  <Button fx:id="btnAgregarProducto" layoutX="322.0" layoutY="204.0" mnemonicParsing="false" onAction="#onAgregarProducto" text="Agregar" />
+                  <Button fx:id="btnProxy" layoutX="37.0" layoutY="204.0" mnemonicParsing="false" onAction="#onProxyAction" text="Implementacion Proxy" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="351.0" prefWidth="503.0">
+               <children>
+                  <TableView fx:id="tableProducto" prefHeight="181.0" prefWidth="455.0">
+                    <columns>
+                      <TableColumn fx:id="tcId" prefWidth="75.0" text="Id" />
+                      <TableColumn fx:id="tcNombre" prefWidth="75.0" text="Nombre" />
+                        <TableColumn fx:id="tcPrecio" prefWidth="75.0" text="Precio" />
+                        <TableColumn fx:id="tcCantidad" prefWidth="75.0" text="Cantidad" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnEliminarProducto" layoutX="355.0" layoutY="208.0" mnemonicParsing="false" onAction="#onEliminarProducto" text="Eliminar" />
+                  <Button fx:id="btnLimpiarSeleccion" layoutX="281.0" layoutY="208.0" mnemonicParsing="false" onAction="#onLimpiarSeleccion" text="Limpiar" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
